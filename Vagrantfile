@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder ".", "/elvagrant"
 
-  # Habilitar la siguiente línea y configurar conforme a máquina y ambiente local
+  # Habilitar y configurar Punto de montaje de archivos del proyecto
 
   #config.vm.synced_folder "C:/Users/Edgar/catastro", "/var/www/html"
 
