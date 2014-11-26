@@ -44,14 +44,18 @@ sudo yum -y install php-mcrypt*
 sudo systemctl mask firewalld
 
 # Instalando postgresql
-yum install -y postgresql
-yum install -y postgresql-server
+sudo yum install -y http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-1.noarch.rpm
+sudo yum install -y postgresql93-9.3.5-2PGDG.rhel7.x86_64
+sudo yum install -y postgresql93-libs-9.3.5-2PGDG.rhel7.x86_64
+sudo yum install -y postgresql93-devel-9.3.5-2PGDG.rhel7.x86_64
+sudo yum install -y postgresql93-server-9.3.5-2PGDG.rhel7.x86_64
+sudo yum install -y postgresql93-contrib-9.3.5-2PGDG.rhel7.x86_64
 
 # Inicializando espacio de datos
-postgresql-setup initdb
+su - postgres -c /usr/pgsql-9.3/bin/initdb
 
 # Configurando permisos de acceso de desarrollo local
-cat > /var/lib/pgsql/data/pg_hba.conf <<FiN
+cat > /var/lib/pgsql/9.3/data/pg_hba.conf <<FiN
 # Database administrative login by Unix domain socket
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 # "local" is for Unix domain socket connections only
@@ -66,13 +70,13 @@ host    all             postgres             ::1/128            trust
 FiN
 
 # Configurando las direcciones de escucha de postgres local
-sed -i -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/g" /var/lib/pgsql/data/postgresql.conf
+sed -i -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/g" /var/lib/pgsql/9.3/data/postgresql.conf
 
 # Inscribiendo el script de autoinicio en boot del postgres
-chkconfig postgresql on
+chkconfig postgresql-9.3 on
 
 # Levantamos postgres
-service postgresql start
+service postgresql-9.3 start
 
 # Creando la base de catastro
 createdb catastro-dev -U postgres
@@ -166,8 +170,8 @@ FINApache
 
 # Requerimientos paqs geograficos
 yum install -y gdal
-yum -y install /elvagrant/pgdg-centos94-9.4-1.noarch.rpm
-yum -y postgis
+sudo yum install -y postgis
+
 cd /elvagrant
 tar xvzf mapserver.tgz
 yum install -y mapserver-6.2.1-5.el7.centos.x86_64.rpm mapserver-debuginfo-6.2.1-5.el7.centos.x86_64.rpm mapserver-perl-6.2.1-5.el7.centos.x86_64.rpm mapserver-python-6.2.1-5.el7.centos.x86_64.rpm
