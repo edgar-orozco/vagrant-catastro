@@ -33,7 +33,7 @@ sudo yum install -y httpd
 sudo systemctl enable httpd.service
 
 # 5 Instalando PHP
-sudo yum install -y php php-pgsql php-gd php-pear php-curl php-memcache php-mhash php-xmlrpc php-xsl php-intl php-mbstring
+sudo yum install -y php php-pgsql php-gd php-pear php-curl php-memcached php-mhash php-xmlrpc php-xsl php-intl php-mbstring
 
 # mCrypt no existe en repos oficiales CentOS 7 por alguna insólita y estúpida razón... vamos a instalarlo desde el repo epel
 cd /tmp/ && wget ftp://ftp.sunet.se/pub/Linux/distributions/fedora/epel/7/x86_64/epel-release-7-1.noarch.rpm
@@ -42,6 +42,9 @@ sudo yum -y install php-mcrypt*
 
 # Deshabilitando firewall
 sudo systemctl mask firewalld
+
+# Instalando memcached
+sudo yum install -y memcached
 
 # Instalando postgresql
 sudo yum install -y http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-1.noarch.rpm
