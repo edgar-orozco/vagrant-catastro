@@ -99,7 +99,7 @@ cd /var/www/html
 composer install
 
 # Cambiando permisos para storage
-chown vagrant.vagrant /var/www/html/app/storage -R
+chown apache.apache /var/www/html/app/storage -R
 chmod 775 /var/www/html/app/storage -R
 
 # Configurando apache
