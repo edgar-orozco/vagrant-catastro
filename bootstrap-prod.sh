@@ -23,7 +23,7 @@ sudo localectl set-locale LANG=es_MX.UTF-8
 sudo localectl set-keymap es
 
 # Configurando hostname
-sudo hostnamectl set-hostname catastro-dev
+sudo hostnamectl set-hostname catastro-prod
 
 # 3. Instalar git curl y wget
 sudo yum install -y git curl wget vim
