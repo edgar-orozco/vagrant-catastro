@@ -170,7 +170,7 @@ FINApache
 
 # Requerimientos paqs geograficos
 yum install -y gdal
-sudo yum install -y postgis
+sudo yum install -y postgis postgis-dev
 
 # Tenemos que tener los paquetes geograficos en el tmp
 cd /tmp
