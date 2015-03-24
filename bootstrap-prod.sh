@@ -179,7 +179,7 @@ yum install -y mapserver-6.2.1-5.el7.centos.x86_64.rpm mapserver-debuginfo-6.2.1
 yum install -y php-mapserver-6.2.1-5.el7.centos.x86_64.rpm
 
 # Finalmente cargamos la base seed si es que existe el dump en el tmp
-psql catastro-dev -U postgres -f /tmp/dump.sql
+psql catastro -U postgres -f /tmp/dump.sql
 
 # Reboot para que se refresquen cambios de hostname y demás
 reboot
