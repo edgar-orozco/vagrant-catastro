@@ -43,6 +43,12 @@ sudo yum -y install php-mcrypt*
 # Deshabilitando firewall
 sudo systemctl mask firewalld
 
+# Deshabilitamos selinux (que chille Dan Walsh, ya está grandecito como para afrontar las consecuencias de sus actos)
+cat > /etc/selinux/config <<FiNSel
+SELINUX=permissive
+SELINUXTYPE=targeted
+FiNSel
+
 # Instalando memcached
 sudo yum install -y memcached
 
