@@ -169,7 +169,7 @@ AddDefaultCharset UTF-8
     MIMEMagicFile conf/magic
 </IfModule>
 
-EnableSendfile on
+EnableSendfile off
 
 IncludeOptional conf.d/*.conf
 FINApache
