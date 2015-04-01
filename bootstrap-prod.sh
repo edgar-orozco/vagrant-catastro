@@ -108,8 +108,8 @@ composer install
 chown apache.apache /var/www/html/app/storage -R
 chmod 775 /var/www/html/app/storage -R
 # Se cambian permisos para carpeta web donde se escriben algunos archivos
-chown apache.apache /var/www/html/public/css/images/logos
-chmod 775 /var/www/html/public/css/images/logos
+chown apache.apache /var/www/html/public/css/images/logos -R
+chmod 775 /var/www/html/public/css/images/logos -R
 
 # Configurando apache
 cat > /etc/httpd/conf/httpd.conf <<FINApache
