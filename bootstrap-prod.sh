@@ -110,6 +110,13 @@ chmod 775 /var/www/html/app/storage -R
 # Se cambian permisos para carpeta web donde se escriben algunos archivos
 chown apache.apache /var/www/html/public/css/images/logos -R
 chmod 775 /var/www/html/public/css/images/logos -R
+#se cambian permisos para directorio de datos complementarios
+chown apache.apache /var/www/html/public/complementarios/anexos -R
+chmod 775 /var/www/html/public/complementarios/anexos -R
+#se cambian permisos para directorio de documentos requisitos en tramites
+chown apache.apache /var/www/html/documentos -R
+chmod 775 /var/www/html/public/documentos -R
+
 
 # Configurando apache
 cat > /etc/httpd/conf/httpd.conf <<FINApache
