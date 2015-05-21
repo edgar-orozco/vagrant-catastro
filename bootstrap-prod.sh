@@ -116,6 +116,9 @@ chmod 775 /var/www/html/public/complementarios/anexos -R
 #se cambian permisos para directorio de documentos requisitos en tramites
 chown apache.apache /var/www/html/documentos -R
 chmod 775 /var/www/html/public/documentos -R
+#se cambian permisos para directorio de documentos de predios valuados (corevat)
+chown apache.apache /var/www/html/corevat -R
+chmod 775 /var/www/html/public/corevat -R
 
 
 # Configurando apache
