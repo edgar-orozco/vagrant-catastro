@@ -189,7 +189,7 @@ FINApache
 
 # Requerimientos paqs geograficos
 yum install -y gdal
-sudo yum install -y postgis* postgis-dev postgis2_93-client.x86_64
+sudo yum install -y postgis2_93*
 
 # Tenemos que tener los paquetes geograficos en el tmp
 cd /tmp
