@@ -54,11 +54,11 @@ sudo yum install -y memcached
 
 # Instalando postgresql
 sudo yum install -y http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-1.noarch.rpm
-sudo yum install -y postgresql93-9.3.5-2PGDG.rhel7.x86_64
-sudo yum install -y postgresql93-libs-9.3.5-2PGDG.rhel7.x86_64
-sudo yum install -y postgresql93-devel-9.3.5-2PGDG.rhel7.x86_64
-sudo yum install -y postgresql93-server-9.3.5-2PGDG.rhel7.x86_64
-sudo yum install -y postgresql93-contrib-9.3.5-2PGDG.rhel7.x86_64
+sudo yum install -y postgresql93
+sudo yum install -y postgresql93-libs
+sudo yum install -y postgresql93-devel
+sudo yum install -y postgresql93-server
+sudo yum install -y postgresql93-contrib
 
 # Inicializando espacio de datos
 su - postgres -c /usr/pgsql-9.3/bin/initdb
@@ -85,7 +85,7 @@ chkconfig postgresql-9.3 on
 service postgresql-9.3 start
 
 # Creando la base de catastro
-createdb catastro-dev -U postgres
+createdb catastro -U postgres
 
 # Instalando el cliente del protocolo NTP
 yum install -y ntp
