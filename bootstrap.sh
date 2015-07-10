@@ -186,6 +186,10 @@ tar xvzf mapserver.tgz
 yum install -y mapserver-6.2.1-5.el7.centos.x86_64.rpm mapserver-debuginfo-6.2.1-5.el7.centos.x86_64.rpm mapserver-perl-6.2.1-5.el7.centos.x86_64.rpm mapserver-python-6.2.1-5.el7.centos.x86_64.rpm
 yum install -y php-mapserver-6.2.1-5.el7.centos.x86_64.rpm
 
+# Se genera la liga simbolica apuntando a tmp para los tiles de mapas que seran visibles através de public/map_output
+cd /var/www/html/public
+ln -s /tmp map_output
+
 # Finalmente cargamos la base seed si es que existe en el directorio compartido
 psql catastro-dev -U postgres -f /elvagrant/pfiscal.sql
 
