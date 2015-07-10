@@ -114,11 +114,14 @@ chmod 755 /var/www/html/public/css/images/logos -R
 chown apache.apache /var/www/html/public/complementarios/anexos -R
 chmod 755 /var/www/html/public/complementarios/anexos -R
 #se cambian permisos para directorio de documentos requisitos en tramites
-chown apache.apache /var/www/html/documentos -R
+chown apache.apache /var/www/html/public/documentos -R
 chmod 755 /var/www/html/public/documentos -R
 #se cambian permisos para directorio de documentos de predios valuados (corevat)
-chown apache.apache /var/www/html/corevat -R
+chown apache.apache /var/www/html/public/corevat -R
 chmod 755 /var/www/html/public/corevat -R
+#se cambian permisos para directorio de imágenes de código de barras
+chown apache.apache /var/www/html/public/barcodes -R
+chmod 755 /var/www/html/public/barcodes -R
 
 
 # Configurando apache
