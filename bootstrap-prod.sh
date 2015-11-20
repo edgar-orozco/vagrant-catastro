@@ -93,6 +93,9 @@ yum install -y ntp
 # Configurando el timezone del servidor local al tiempo central
 yes | cp -f /usr/share/zoneinfo/Mexico/General /etc/localtime
 
+systemctl start ntp
+systemctl enable ntp
+
 # Instalando COMPOSER
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/bin/composer
