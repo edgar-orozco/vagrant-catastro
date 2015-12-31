@@ -126,6 +126,14 @@ chmod 755 /var/www/html/public/corevat -R
 chown apache.apache /var/www/html/public/barcodes -R
 chmod 755 /var/www/html/public/barcodes -R
 
+#Más directorios para generar archivos
+mkdir /var/www/html/public/ResultadoCartografia
+mkdir /var/www/html/public/ResultadoCartografia/predios
+mkdir /var/www/html/public/ResultadoCartografia/manzana
+mkdir /var/www/html/public/ResultadoCartografia/construccion
+mkdir /var/www/html/public/ResultadoCartografia/calles
+chown apache.apache -R /var/www/html/public/ResultadoCartografia
+chmod 755 /var/www/html/public/ResultadoCartografia -R
 
 # Configurando apache
 cat > /etc/httpd/conf/httpd.conf <<FINApache
